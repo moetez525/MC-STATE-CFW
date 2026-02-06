@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC STATE - FiveM Server</title>
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1451289339035390094/71aaf36a51f2f61133d3804de80b4dbc.webp?size=64" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        const translations = {
+            en: {
+                "home": "Home",
+                "about": "About",
+                "features": "Features",
+                "contact": "Contact",
+                "welcome": "Welcome to MC STATE",
+                "tagline": "Experience the ultimate FiveM roleplay server",
+                "connect_btn": "Connect to Server",
+                "about_title": "About MC STATE",
+                "about_desc": "MC STATE is a premium FiveM roleplay server dedicated to providing an immersive and engaging experience for all players. Join our vibrant community and be part of an adventure like no other.",
+                "community": "Active Community",
+                "community_desc": "Join many of players in our thriving community",
+                "premium": "Premium Experience",
+                "premium_desc": "High-quality roleplay with dedicated staff and support",
+                "stable": "Stable Server",
+                "stable_desc": "24/7 uptime with excellent performance",
+                "features_title": "Server Features",
+                "feature_1": "Custom scripts and modifications",
+                "feature_2": "Whitelist application system",
+                "feature_3": "Professional staff team",
+                "feature_4": "Regular updates and improvements",
+                "feature_5": "Active economy system",
+                "feature_6": "Gang and faction system",
+                "join_community": "Join Our Community",
+                "discord_title": "Discord Server",
+                "discord_desc": "Join our Discord for updates, support, and community interaction",
+                "explore_more": "Explore More",
+                "connect_now": "Connect Now",
+                "connect_desc": "Ready to play? Click the button below to join the server",
+                "join_server": "Join Server",
+                "team": "Our Team",
+                "owners": "Owners",
+                "co_owners": "Co-Owners",
+                "developer": "Site Developer",
+                "abu_desc": "Server Owner & Developer",
+                "xvr_desc": "Server Owner & Manager",
+                "dangor_desc": "Co-Owner & Manager",
+                "glow_desc": "Co-Owner & Manager",
+                "monster_desc": "Website Developer & Admin",
+                "footer": "© 2026 MC STATE. All rights reserved. | Powered by MONSTER"
+            },
+            ar: {
+                "home": "الرئيسية",
+                "about": "حول",
+                "features": "الميزات",
+                "contact": "اتصل",
+                "welcome": "أهلا بك في MC STATE",
+                "tagline": "استمتع بأفضل خادم FiveM للعب",
+                "connect_btn": "الاتصال بالخادم",
+                "about_title": "عن MC STATE",
+                "about_desc": "MC STATE هو خادم FiveM متميز مكرس لتوفير تجربة غامرة وجذابة لجميع اللاعبين. انضم إلى مجتمعنا النابض بالحياة وكن جزءا من مغامرة لا مثيل لها.",
+                "community": "مجتمع نشط",
+                "community_desc": "انضم إلى الكثير من اللاعبين في مجتمعنا المزدهر",
+                "premium": "تجربة متميزة",
+                "premium_desc": "لعب عالي الجودة مع فريق مساعدة محترف",
+                "stable": "خادم مستقر",
+                "stable_desc": "متاح 24/7 بأداء ممتازة",
+                "features_title": "ميزات الخادم",
+                "feature_1": "نصوص برمجية وتعديلات مخصصة",
+                "feature_2": "نظام تطبيق القائمة البيضاء",
+                "feature_3": "فريق موظفين محترف",
+                "feature_4": "تحديثات وتحسينات منتظمة",
+                "feature_5": "نظام اقتصادي نشط",
+                "feature_6": "نظام العصابات والفصائل",
+                "join_community": "انضم إلى مجتمعنا",
+                "discord_title": "خادم Discord",
+                "discord_desc": "انضم إلى Discord الخاص بنا للتحديثات والدعم والتفاعل المجتمعي",
+                "explore_more": "استكشف المزيد",
+                "connect_now": "الاتصال الآن",
+                "connect_desc": "هل أنت مستعد للعب؟ انقر على الزر أدناه للانضمام إلى الخادم",
+                "join_server": "انضم إلى الخادم",
+                "team": "فريقنا",
+                "owners": "المالكون",
+                "co_owners": "نائبا المالك",
+                "developer": "مطور الموقع",
+                "abu_desc": "مالك الخادم ومطور",
+                "xvr_desc": "مالك الخادم ومدير",
+                "dangor_desc": "نائب المالك والمسؤول",
+                "glow_desc": "نائب المالك والمسؤول",
+                "monster_desc": "مطور الموقع و مسؤل",
+                "footer": "© 2026 MC STATE. جميع الحقوق محفوظة. | مدعوم من قبل MONSTER"
+            }
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" id="logoLink">
+                <img src="https://cdn.discordapp.com/icons/1451289339035390094/71aaf36a51f2f61133d3804de80b4dbc.webp?size=64" alt="MC STATE Logo" class="logo-img">
+                <span class="logo-text">MC STATE</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-key="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-key="about">About</a></li>
+                <li><a href="#features" class="nav-link" data-key="features">Features</a></li>
+                <li><a href="#team" class="nav-link" data-key="team">Team</a></li>
+                <li><a href="#contact" class="nav-link" data-key="contact">Contact</a></li>
+            </ul>
+            <div class="toggle-group">
+                <div class="language-toggle">
+                    <button class="lang-btn active" id="langEN" data-lang="en">EN</button>
+                    <button class="lang-btn" id="langAR" data-lang="ar">AR</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-key="welcome">Welcome to MC STATE</h1>
+            <p data-key="tagline">Experience the ultimate FiveM roleplay server</p>
+            <div class="hero-buttons">
+                <a href="https://cfx.re/join/mxjdod" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-gamepad"></i> <span data-key="connect_btn">Connect to Server</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-key="about_title">About MC STATE</h2>
+            <p data-key="about_desc">MC STATE is a premium FiveM roleplay server dedicated to providing an immersive and engaging experience for all players. Join our vibrant community and be part of an adventure like no other.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3 data-key="community">Active Community</h3>
+                    <p data-key="community_desc">Join many of players in our thriving community</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3 data-key="premium">Premium Experience</h3>
+                    <p data-key="premium_desc">High-quality roleplay with dedicated staff and support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-server"></i>
+                    <h3 data-key="stable">Stable Server</h3>
+                    <p data-key="stable_desc">24/7 uptime with excellent performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-key="features_title">Server Features</h2>
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> <span data-key="feature_1">Custom scripts and modifications</span></li>
+                <li><i class="fas fa-check"></i> <span data-key="feature_2">Whitelist application system</span></li>
+                <li><i class="fas fa-check"></i> <span data-key="feature_3">Professional staff team</span></li>
+                <li><i class="fas fa-check"></i> <span data-key="feature_4">Regular updates and improvements</span></li>
+                <li><i class="fas fa-check"></i> <span data-key="feature_5">Active economy system</span></li>
+                <li><i class="fas fa-check"></i> <span data-key="feature_6">Gang and faction system</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-key="join_community">Join Our Community</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fab fa-discord"></i>
+                    <h3 data-key="discord_title">Discord Server</h3>
+                    <p data-key="discord_desc">Join our Discord for updates, support, and community interaction</p>
+                    <a href="https://discord.gg/mc-1" class="btn btn-secondary" target="_blank">
+                        <span data-key="explore_more">Explore More</span>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3 data-key="connect_now">Connect Now</h3>
+                    <p data-key="connect_desc">Ready to play? Click the button below to join the server</p>
+                    <a href="https://cfx.re/join/mxjdod" class="btn btn-secondary" target="_blank">
+                        <span data-key="join_server">Join Server</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2 data-key="team">Our Team</h2>
+            
+            <div class="team-section">
+                <h3 data-key="owners">Owners</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUlRMfoRmf66dLlxoLcylxXDhYvOMkotPzgi7B3oPv2xemb70" alt="MC | 𝐀𝐛𝐮 𝐒𝐪𝐫 ᴰᵉᵛ" class="team-img">
+                        <h4>MC | 𝐀𝐛𝐮 𝐒𝐪𝐫 ᴰᵉᵛ</h4>
+                        <p data-key="abu_desc" class="team-description">Server Owner & Developer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUlRMfoRmf66dLlxoLcylxXDhYvOMkotPzgi7B3oPv2xemb70" alt="MC | XVR" class="team-img">
+                        <h4>MC | XVR</h4>
+                        <p data-key="xvr_desc" class="team-description">Server Owner & Manager</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 data-key="co_owners">Co-Owners</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT6DSwrY3u5rZBqi-wBCt1UgOKxQWCJOdKab9uTT_imMXtUhdAA" alt="MC | 𝐃𝐀𝐍𝐆𝐎𝐔𝐑 ★" class="team-img">
+                        <h4>MC | 𝐃𝐀𝐍𝐆𝐎𝐔𝐑 ★</h4>
+                        <p data-key="dangor_desc" class="team-description">Co-Owner & Admin</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://media.discordapp.net/attachments/1394390199190032555/1469445797517983880/image.png?ex=6987af8b&is=69865e0b&hm=9d81af0841e42cab90e59781cff5592603c72702eda05aeee44b1323bd7d88ec&=&format=webp&quality=lossless&width=262&height=350" alt="MC | 𝐠 𝐥 𝐨 𝐰" class="team-img">
+                        <h4>MC | 𝐠 𝐥 𝐨 𝐰</h4>
+                        <p data-key="glow_desc" class="team-description">Co-Owner & Moderator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 data-key="developer">Site Developer</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="data:image/jpeg;base64,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" alt="MC | 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫" class="team-img">
+                        <h4>MC | 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫</h4>
+                        <p data-key="monster_desc" class="team-description">Website Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-key="footer">&copy; 2026 MC STATE. All rights reserved. | Powered by MONSTER</p>
+            <div class="social-media">
+                <a href="https://discord.gg/mc-1" target="_blank" rel="noopener noreferrer" class="social-link" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.tiktok.com/@xm7_os0" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        // Set initial language
+        document.documentElement.lang = currentLanguage;
+        document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+        
+        // Update button states
+        updateLanguageButtons();
+
+        // Language switching
+        document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
+        document.getElementById('langAR').addEventListener('click', () => setLanguage('ar'));
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            updatePageTranslations(lang);
+            updateLanguageButtons();
+        }
+
+        function updateLanguageButtons() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('lang' + currentLanguage.toUpperCase()).classList.add('active');
+        }
+
+        function updatePageTranslations(lang) {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Initialize translations
+        updatePageTranslations(currentLanguage);
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+        
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+    </script>
+</body>
+</html>
