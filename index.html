@@ -1,331 +1,1855 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC STATE - FiveM Server</title>
-    <link rel="icon" href="https://cdn.discordapp.com/icons/1451289339035390094/71aaf36a51f2f61133d3804de80b4dbc.webp?size=64" type="image/webp">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        const translations = {
-            en: {
-                "home": "Home",
-                "about": "About",
-                "features": "Features",
-                "contact": "Contact",
-                "welcome": "Welcome to MC STATE",
-                "tagline": "Experience the ultimate FiveM roleplay server",
-                "connect_btn": "Connect to Server",
-                "about_title": "About MC STATE",
-                "about_desc": "MC STATE is a premium FiveM roleplay server dedicated to providing an immersive and engaging experience for all players. Join our vibrant community and be part of an adventure like no other.",
-                "community": "Active Community",
-                "community_desc": "Join many of players in our thriving community",
-                "premium": "Premium Experience",
-                "premium_desc": "High-quality roleplay with dedicated staff and support",
-                "stable": "Stable Server",
-                "stable_desc": "24/7 uptime with excellent performance",
-                "features_title": "Server Features",
-                "feature_1": "Custom scripts and modifications",
-                "feature_2": "Whitelist application system",
-                "feature_3": "Professional staff team",
-                "feature_4": "Regular updates and improvements",
-                "feature_5": "Active economy system",
-                "feature_6": "Gang and faction system",
-                "join_community": "Join Our Community",
-                "discord_title": "Discord Server",
-                "discord_desc": "Join our Discord for updates, support, and community interaction",
-                "explore_more": "Explore More",
-                "connect_now": "Connect Now",
-                "connect_desc": "Ready to play? Click the button below to join the server",
-                "join_server": "Join Server",
-                "team": "Our Team",
-                "owners": "Owners",
-                "co_owners": "Co-Owners",
-                "developer": "Site Developer",
-                "abu_desc": "Server Owner & Developer",
-                "xvr_desc": "Server Owner & Manager",
-                "dangor_desc": "Co-Owner & Manager",
-                "glow_desc": "Co-Owner & Manager",
-                "monster_desc": "Website Developer & Admin",
-                "footer": "© 2026 MC STATE. All rights reserved. | Powered by MONSTER"
-            },
-            ar: {
-                "home": "الرئيسية",
-                "about": "حول",
-                "features": "الميزات",
-                "contact": "اتصل",
-                "welcome": "أهلا بك في MC STATE",
-                "tagline": "استمتع بأفضل خادم FiveM للعب",
-                "connect_btn": "الاتصال بالخادم",
-                "about_title": "عن MC STATE",
-                "about_desc": "MC STATE هو خادم FiveM متميز مكرس لتوفير تجربة غامرة وجذابة لجميع اللاعبين. انضم إلى مجتمعنا النابض بالحياة وكن جزءا من مغامرة لا مثيل لها.",
-                "community": "مجتمع نشط",
-                "community_desc": "انضم إلى الكثير من اللاعبين في مجتمعنا المزدهر",
-                "premium": "تجربة متميزة",
-                "premium_desc": "لعب عالي الجودة مع فريق مساعدة محترف",
-                "stable": "خادم مستقر",
-                "stable_desc": "متاح 24/7 بأداء ممتازة",
-                "features_title": "ميزات الخادم",
-                "feature_1": "نصوص برمجية وتعديلات مخصصة",
-                "feature_2": "نظام تطبيق القائمة البيضاء",
-                "feature_3": "فريق موظفين محترف",
-                "feature_4": "تحديثات وتحسينات منتظمة",
-                "feature_5": "نظام اقتصادي نشط",
-                "feature_6": "نظام العصابات والفصائل",
-                "join_community": "انضم إلى مجتمعنا",
-                "discord_title": "خادم Discord",
-                "discord_desc": "انضم إلى Discord الخاص بنا للتحديثات والدعم والتفاعل المجتمعي",
-                "explore_more": "استكشف المزيد",
-                "connect_now": "الاتصال الآن",
-                "connect_desc": "هل أنت مستعد للعب؟ انقر على الزر أدناه للانضمام إلى الخادم",
-                "join_server": "انضم إلى الخادم",
-                "team": "فريقنا",
-                "owners": "المالكون",
-                "co_owners": "نائبا المالك",
-                "developer": "مطور الموقع",
-                "abu_desc": "مالك الخادم ومطور",
-                "xvr_desc": "مالك الخادم ومدير",
-                "dangor_desc": "نائب المالك والمسؤول",
-                "glow_desc": "نائب المالك والمسؤول",
-                "monster_desc": "مطور الموقع و مسؤل",
-                "footer": "© 2026 MC STATE. جميع الحقوق محفوظة. | مدعوم من قبل MONSTER"
+    <title>MC STATE - أفضل سيرفر FiveM</title>
+    <link rel="icon" type="image/png" href="logo.gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Changa:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="website-color.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 10% 20%, rgba(0, 242, 250, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 80%, rgba(0, 242, 250, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 242, 250, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+            animation: ambientPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes ambientPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 247, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 250, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 15s infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
             }
-        };
-    </script>
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid rgb(0, 242, 250);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-bottom-color: rgb(0, 242, 250);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--white);
+            box-shadow: 
+                0 10px 30px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 242, 250, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .logo:hover .logo-icon {
+            transform: translateY(-5px) rotate(-5deg);
+            box-shadow: 
+                0 15px 40px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Changa', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover i {
+            transform: scale(1.2);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-orange);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary-orange);
+            transform: scale(1.1);
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 60px 100px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(0, 242, 250), rgba(255, 69, 0, 0.05));
+            filter: blur(60px);
+            animation: shapeFloat 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 10s;
+        }
+
+        @keyframes shapeFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(100px, -100px) scale(1.1);
+            }
+            66% {
+                transform: translate(-100px, 100px) scale(0.9);
+            }
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 242, 250, 0.1);
+            border: 1px solid rgb(0, 242, 250);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-orange);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+        }
+
+        .hero-subtitle i {
+            font-size: 12px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-text h1 {
+            font-family: 'Changa', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+            letter-spacing: -2px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 45px;
+            max-width: 600px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 45px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .stat-number {
+            font-family: 'Changa', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .btn i {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
+            color: var(--white);
+            box-shadow: 
+                0 10px 30px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 40px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 174, 255, 0.1);
+            color: var(--white);
+            border: 2px solid rgb(0, 242, 250);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgb(0, 242, 250);
+            border-color: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotating-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-orange);
+            border-right-color: var(--primary-orange);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .server-logo {
+            width: 85%;
+            height: auto;
+            filter: drop-shadow(0 30px 80px rgb(0, 242, 250));
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        .features {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 24px;
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 60px rgb(0, 242, 250);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--white);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgb(0, 242, 250);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .feature-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .connect-section {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(20, 20, 20, 0.9));
+            backdrop-filter: blur(30px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgb(0, 242, 250) 0%, transparent 70%);
+            animation: rotateGlow 15s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .connect-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-btn {
+            padding: 22px 50px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .admins-section {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admins-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .admins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 80px;
+        }
+
+        .admin-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 24px;
+            padding: 45px 35px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgb(0, 242, 250), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .admin-card:hover::before {
+            opacity: 1;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 25px 70px rgb(0, 242, 250);
+        }
+
+        .admin-image-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+        }
+
+        .admin-image-border {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            padding: 3px;
+            animation: rotate 5s linear infinite;
+        }
+
+        .admin-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--card-bg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-card:hover .admin-image {
+            transform: scale(1.05);
+        }
+
+        .admin-rank {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgb(0, 242, 250);
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-rank i {
+            font-size: 12px;
+        }
+
+        .admin-name {
+            font-family: 'Changa', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .store-cta {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgb(0, 242, 250);
+        }
+
+        .store-container::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.03) 20px,
+                rgba(255, 255, 255, 0.03) 40px
+            );
+            animation: moveStripes 20s linear infinite;
+        }
+
+        @keyframes moveStripes {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 40px); }
+        }
+
+        .store-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--white);
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-store {
+            background: var(--white);
+            color: var(--primary-orange);
+            padding: 22px 50px;
+            font-size: 18px;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-store:hover {
+            background: var(--off-white);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            border-top: 1px solid rgb(0, 242, 250);
+            padding: 80px 60px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .footer-logo-text {
+            font-family: 'Changa', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-description {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-link i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-orange);
+            transform: translateX(5px);
+        }
+
+        .footer-link:hover i {
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgb(0, 242, 250);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--light-orange);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgb(0, 242, 250);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgb(0, 242, 250);
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 58px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                max-width: 350px;
+                height: calc(100vh - 80px);
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 30px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border-left: 1px solid rgb(0, 242, 250);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 30px 80px;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .features,
+            .connect-section,
+            .admins-section,
+            .store-cta {
+                padding: 80px 30px;
+            }
+
+            .connect-container,
+            .store-container {
+                padding: 50px 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--light-orange);
+        }
+
+        ::selection {
+            background: var(--primary-orange);
+            color: var(--white);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo" id="logoLink">
-                <img src="https://cdn.discordapp.com/icons/1451289339035390094/71aaf36a51f2f61133d3804de80b4dbc.webp?size=64" alt="MC STATE Logo" class="logo-img">
+    <!-- Particles Container -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="logo.gif" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                </div>
                 <span class="logo-text">MC STATE</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-key="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-key="about">About</a></li>
-                <li><a href="#features" class="nav-link" data-key="features">Features</a></li>
-                <li><a href="#team" class="nav-link" data-key="team">Team</a></li>
-                <li><a href="#contact" class="nav-link" data-key="contact">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> المميزات</a></li>
+                <li><a href="#connect"><i class="fas fa-gamepad"></i> الدخول لسيرفر</a></li>
+                <li><a href="#admins"><i class="fas fa-users-cog"></i> الإداريين</a></li>
+                <li><a href="https://store.example.com" target="_blank"><i class="fas fa-shopping-cart"></i> المتجر</a></li>
             </ul>
-            <div class="toggle-group">
-                <div class="language-toggle">
-                    <button class="lang-btn active" id="langEN" data-lang="en">EN</button>
-                    <button class="lang-btn" id="langAR" data-lang="ar">AR</button>
-                </div>
-                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
         <div class="hero-content">
-            <h1 data-key="welcome">Welcome to MC STATE</h1>
-            <p data-key="tagline">Experience the ultimate FiveM roleplay server</p>
-            <div class="hero-buttons">
-                <a href="https://cfx.re/join/mxjdod" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-gamepad"></i> <span data-key="connect_btn">Connect to Server</span>
-                </a>
+            <div class="hero-text">
+                <div class="hero-subtitle">
+                    <i class="fas fa-fire"></i>
+                    <span>أفضل سيرفر FiveM في المنطقة</span>
+                </div>
+                <h1>مرحباً بك في<br>MC STATE</h1>
+                <p>
+                    انضم إلى أكبر مجتمع عربي للعبة FiveM! نقدم لك تجربة لعب فريدة من نوعها مع نظام اقتصادي متطور، وظائف متنوعة، وإدارة محترفة متاحة على مدار الساعة. ابدأ رحلتك الآن وكن جزءاً من مجتمعنا المتنامي!
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">64+</div>
+                        <div class="stat-label">لاعب نشط</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">دعم فني</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">جاهزية السيرفر</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#connect" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        انضم الآن
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        اكتشف المزيد
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="rotating-border"></div>
+                    <img src="logo.gif" alt="Server Logo" class="server-logo" style="width: 85%; height: auto; border-radius: 20px;">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 data-key="about_title">About MC STATE</h2>
-            <p data-key="about_desc">MC STATE is a premium FiveM roleplay server dedicated to providing an immersive and engaging experience for all players. Join our vibrant community and be part of an adventure like no other.</p>
+    <!-- Features Section -->
+    <section id="features" class="features fade-in-section">
+        <div class="features-container">
+            <h2 class="section-title">لماذا MC STATE؟</h2>
+            <p class="section-subtitle">
+                نقدم لك أفضل تجربة لعب مع مميزات حصرية لن تجدها في أي مكان آخر
+            </p>
+
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3 data-key="community">Active Community</h3>
-                    <p data-key="community_desc">Join many of players in our thriving community</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">حماية قوية</h3>
+                    <p class="feature-description">
+                        نظام حماية متطور ضد المخترقين والمودرز لضمان تجربة لعب عادلة للجميع
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3 data-key="premium">Premium Experience</h3>
-                    <p data-key="premium_desc">High-quality roleplay with dedicated staff and support</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3 class="feature-title">اقتصاد واقعي</h3>
+                    <p class="feature-description">
+                        نظام اقتصادي متوازن مع وظائف متنوعة وفرص ربح حقيقية داخل السيرفر
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <i class="fas fa-server"></i>
-                    <h3 data-key="stable">Stable Server</h3>
-                    <p data-key="stable_desc">24/7 uptime with excellent performance</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">مجتمع نشط</h3>
+                    <p class="feature-description">
+                        مجتمع عربي كبير ونشط مع فعاليات دورية ومسابقات بجوائز قيمة
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">دعم 24/7</h3>
+                    <p class="feature-description">
+                        فريق دعم فني محترف متاح على مدار الساعة للإجابة على استفساراتك
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="feature-title">أداء عالي</h3>
+                    <p class="feature-description">
+                        خوادم قوية بأحدث التقنيات لضمان تجربة لعب سلسة بدون تقطيع
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">مكافآت يومية</h3>
+                    <p class="feature-description">
+                        احصل على مكافآت يومية وهدايا حصرية فقط بتسجيل الدخول للسيرفر
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 data-key="features_title">Server Features</h2>
-            <ul class="features-list">
-                <li><i class="fas fa-check"></i> <span data-key="feature_1">Custom scripts and modifications</span></li>
-                <li><i class="fas fa-check"></i> <span data-key="feature_2">Whitelist application system</span></li>
-                <li><i class="fas fa-check"></i> <span data-key="feature_3">Professional staff team</span></li>
-                <li><i class="fas fa-check"></i> <span data-key="feature_4">Regular updates and improvements</span></li>
-                <li><i class="fas fa-check"></i> <span data-key="feature_5">Active economy system</span></li>
-                <li><i class="fas fa-check"></i> <span data-key="feature_6">Gang and faction system</span></li>
-            </ul>
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section fade-in-section">
+    <div class="connect-container">
+        <h2 class="connect-title">جاهز للانضمام؟</h2>
+        <p class="connect-description">
+            ابدأ مغامرتك الآن في أفضل سيرفر FiveM عربي! انقر على الزر أدناه للانضمام إلى السيرفر أو انضم لمجتمعنا على دسكورد
+        </p>
+        <div class="connect-buttons">
+            <button class="btn btn-primary connect-btn" onclick="connectToServer()">
+                <i class="fas fa-gamepad"></i>
+                Connect FiveM Server
+            </button>
+
+            <button class="btn btn-secondary connect-btn" onclick="joinDiscord()">
+                <i class="fab fa-discord"></i>
+                انضم لدسكورد
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+function joinDiscord() {
+    window.open("https://discord.com/invite/gt0", "_blank");
+}
+</script>
+    <!-- Admins Section -->
+    <section id="admins" class="admins-section fade-in-section">
+        <div class="admins-container">
+            <h2 class="section-title">فريق الإدارة</h2>
+            <p class="section-subtitle">
+                تعرف على فريقنا المحترف الذي يعمل على مدار الساعة لضمان أفضل تجربة لك
+            </p>
+
+            <div class="admins-grid">
+                <!-- Owner -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="https://media.discordapp.net/attachments/1468970663221006562/1469774041702203556/1452185168956751994_04.jpg?ex=6988e13e&is=69878fbe&hm=8c43825077a80b68d7ba89cd763fe225e9d8dc3f7c89732abb5cfc8f61c46248&=&format=webp" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-crown"></i>
+                        Owner
+                    </span>
+                    <h3 class="admin-name">MC | 𝐀𝐛𝐮 𝐒𝐪𝐫 ᴰᵉᵛ !</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+                <!-- إلى هنا -->
+
+                <!-- CO-OWNERS -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="https://media.discordapp.net/attachments/1394390199190032555/1469445797517983880/image.png?ex=6988584b&is=698706cb&hm=c72dd5565253efbb636aa05bf48599735c4266b030557f5ecd459c8fd59476e6&=&format=webp&quality=lossless" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-star"></i>
+                        Co-Owner
+                    </span>
+                    <h3 class="admin-name">MC | 𝐠 𝐥 𝐨 𝐰</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT6DSwrY3u5rZBqi-wBCt1UgOKxQWCJOdKab9uTT_imMXtUhdAA" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-star"></i>
+                        Co-Owner
+                    </span>
+                    <h3 class="admin-name">MC | 𝐃𝐀𝐍𝐆𝐎𝐔𝐑 ★</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+                <!-- CONSERSHIP -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ4PJvQIeeU5swKyhiQL1LBHBWTBoCDpIvB9-V4FwAhA3jT09Gi" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-shield-alt"></i>
+                        CONSERSHIP
+                    </span>
+                    <h3 class="admin-name">MC | ᴄᴀᴘᴄᴀʟᴏᴜ</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+                <!-- WEB DEVLOPPER -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="AA.jpg" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-user-shield"></i>
+                        WEB DEVLOPPER
+                    </span>
+                    <h3 class="admin-name">ᵀˢˢ 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 data-key="join_community">Join Our Community</h2>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <i class="fab fa-discord"></i>
-                    <h3 data-key="discord_title">Discord Server</h3>
-                    <p data-key="discord_desc">Join our Discord for updates, support, and community interaction</p>
-                    <a href="https://discord.gg/mc-1" class="btn btn-secondary" target="_blank">
-                        <span data-key="explore_more">Explore More</span>
+    <!-- Store CTA Section -->
+    <section class="store-cta fade-in-section">
+        <div class="store-container">
+            <div class="store-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h2 class="store-title">زُر متجرنا الإلكتروني</h2>
+            <p class="store-description">
+                اكتشف عروضنا الحصرية! احصل على باقات VIP، سيارات فاخرة، وأسلحة قوية من متجرنا الإلكتروني بأسعار تنافسية
+            </p>
+            <a href="https://store.example.com" target="_blank" class="btn btn-store">
+                <i class="fas fa-shopping-cart"></i>
+                تصفح المتجر الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                    </div>
+                    <span class="footer-logo-text">MC STATE</span>
+                </div>
+                <p class="footer-description">
+                    أفضل سيرفر FiveM عربي يقدم لك تجربة لعب فريدة ومميزة مع مجتمع نشط وإدارة محترفة
+                </p>
+                <div class="footer-social">
+                    <a href="https://discord.com/invite/mc-1" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
-                <div class="contact-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3 data-key="connect_now">Connect Now</h3>
-                    <p data-key="connect_desc">Ready to play? Click the button below to join the server</p>
-                    <a href="https://cfx.re/join/mxjdod" class="btn btn-secondary" target="_blank">
-                        <span data-key="join_server">Join Server</span>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">روابط سريعة</h4>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الرئيسية
+                    </a>
+                    <a href="#features" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        المميزات
+                    </a>
+                    <a href="#connect" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الدخول للسيرفر
+                    </a>
+                    <a href="#admins" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الإداريين
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">الدعم</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        مركز المساعدة
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الأسئلة الشائعة
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        القوانين
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        تواصل معنا
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">معلومات</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        من نحن
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        سياسة الخصوصية
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        شروط الاستخدام
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        المتجر
                     </a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="team" class="team">
-        <div class="container">
-            <h2 data-key="team">Our Team</h2>
-            
-            <div class="team-section">
-                <h3 data-key="owners">Owners</h3>
-                <div class="team-members">
-                    <div class="team-member">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUlRMfoRmf66dLlxoLcylxXDhYvOMkotPzgi7B3oPv2xemb70" alt="MC | 𝐀𝐛𝐮 𝐒𝐪𝐫 ᴰᵉᵛ" class="team-img">
-                        <h4>MC | 𝐀𝐛𝐮 𝐒𝐪𝐫 ᴰᵉᵛ</h4>
-                        <p data-key="abu_desc" class="team-description">Server Owner & Developer</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUlRMfoRmf66dLlxoLcylxXDhYvOMkotPzgi7B3oPv2xemb70" alt="MC | XVR" class="team-img">
-                        <h4>MC | XVR</h4>
-                        <p data-key="xvr_desc" class="team-description">Server Owner & Manager</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-section">
-                <h3 data-key="co_owners">Co-Owners</h3>
-                <div class="team-members">
-                    <div class="team-member">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT6DSwrY3u5rZBqi-wBCt1UgOKxQWCJOdKab9uTT_imMXtUhdAA" alt="MC | 𝐃𝐀𝐍𝐆𝐎𝐔𝐑 ★" class="team-img">
-                        <h4>MC | 𝐃𝐀𝐍𝐆𝐎𝐔𝐑 ★</h4>
-                        <p data-key="dangor_desc" class="team-description">Co-Owner & Admin</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://media.discordapp.net/attachments/1394390199190032555/1469445797517983880/image.png?ex=6987af8b&is=69865e0b&hm=9d81af0841e42cab90e59781cff5592603c72702eda05aeee44b1323bd7d88ec&=&format=webp&quality=lossless&width=262&height=350" alt="MC | 𝐠 𝐥 𝐨 𝐰" class="team-img">
-                        <h4>MC | 𝐠 𝐥 𝐨 𝐰</h4>
-                        <p data-key="glow_desc" class="team-description">Co-Owner & Moderator</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-section">
-                <h3 data-key="developer">Site Developer</h3>
-                <div class="team-members">
-                    <div class="team-member">
-                        <img src="data:image/jpeg;base64,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" alt="MC | 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫" class="team-img">
-                        <h4>MC | 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫</h4>
-                        <p data-key="monster_desc" class="team-description">Website Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p data-key="footer">&copy; 2026 MC STATE. All rights reserved. | Powered by MONSTER</p>
-            <div class="social-media">
-                <a href="https://discord.gg/mc-1" target="_blank" rel="noopener noreferrer" class="social-link" title="Discord">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="https://www.tiktok.com/@xm7_os0" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-            </div>
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 <strong>MC STATE</strong> - جميع الحقوق محفوظة
+            </p>
+            <p style="margin-top: 10px;">
+                صُمم بكل حب <i class="fas fa-heart" style="color: var(--primary-orange);"></i> لأفضل مجتمع ألعاب عربي
+            </p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        let currentLanguage = localStorage.getItem('language') || 'en';
+        // Particle System
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 60;
 
-        // Set initial language
-        document.documentElement.lang = currentLanguage;
-        document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
-        
-        // Update button states
-        updateLanguageButtons();
-
-        // Language switching
-        document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
-        document.getElementById('langAR').addEventListener('click', () => setLanguage('ar'));
-
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            localStorage.setItem('language', lang);
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            updatePageTranslations(lang);
-            updateLanguageButtons();
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = '-10px';
+                
+                // Random animation duration and delay
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(particle);
+            }
         }
 
-        function updateLanguageButtons() {
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
-            document.getElementById('lang' + currentLanguage.toUpperCase()).classList.add('active');
-        }
+        });
 
-        function updatePageTranslations(lang) {
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        function updateActiveLink() {
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinksAll.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
         }
 
-        // Initialize translations
-        updatePageTranslations(currentLanguage);
+        window.addEventListener('scroll', updateActiveLink);
 
-        // Theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const icon = themeToggle.querySelector('i');
-        
-        // Check for saved theme preference or default to 'light'
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        updateIcon(currentTheme);
-        
-        function updateIcon(theme) {
-            if (theme === 'dark') {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const theme = html.getAttribute('data-theme');
-            const newTheme = theme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
+        // Scroll Animations
+        const fadeInElements = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
         });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Connect to Server Function
+        function connectToServer() {
+            // استبدل بـ IP السيرفر الخاص بك
+            const serverIP = 'YOUR_SERVER_IP:30120';
+            window.location.href = `fivem://connect/mxjdod`;
+            
+            // Alternative: Show alert with IP
+            // alert(`IP السيرفر: ${serverIP}\n\nانسخ الـ IP والصقه في FiveM`);
+        }
+
+        // Join Discord Function
+        function joinDiscord() {
+            // استبدل برابط دسكورد الخاص بك
+            const discordLink = 'https://discord.com/invite/mc-1';
+            window.open(discordLink, '_blank');
+            
+            // Alternative: Show alert
+            // alert(`رابط دسكورد: ${discordLink}`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            updateActiveLink();
+        });
+
+        // Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.shape');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 30;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                shape.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+    
     </script>
 </body>
 </html>
